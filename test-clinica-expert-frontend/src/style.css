@@ -1,0 +1,46 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f7f8fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+  --color-icon-info: #cbd6e0;
+  --color-icon-action: #718eac;
+  --color-info: #7995b1;
+  --color-borders: #f4f5f7;
+  --color-errors: #FF0000FF;
+  --bg-button-primary: #eff2f6;
+
+  --max-width-page: 1280px;
+}
+
+a {
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  width: 100%;
+  margin: auto;
+
+
+}
+
+#app section[class$="-page"] {
+  max-width: var(--max-width-page);
+  margin: auto;
+ }

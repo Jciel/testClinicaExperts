@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test ListItem.vue component > mount component 1`] = `
+"<div data-v-ee8f0cc4=\\"\\" class=\\"list-item\\">
+  <font-awesome-icon data-v-ee8f0cc4=\\"\\" class=\\"dot\\" icon=\\"fa-solid fa-ellipsis-vertical\\" size=\\"lg\\"></font-awesome-icon>
+  <div data-v-ee8f0cc4=\\"\\" class=\\"text-link\\"><span data-v-ee8f0cc4=\\"\\" class=\\"link-name\\">shortLinkUrl</span><span data-v-ee8f0cc4=\\"\\" class=\\"short-link\\" href=\\"\\">gg</span></div>
+  <div data-v-ee8f0cc4=\\"\\" class=\\"info-actions-group\\">
+    <div data-v-ee8f0cc4=\\"\\" class=\\"hits-stats\\">23 <font-awesome-icon data-v-ee8f0cc4=\\"\\" class=\\"stats\\" icon=\\"fa-chart-simple\\" size=\\"lg\\"></font-awesome-icon>
+    </div>
+    <div data-v-ee8f0cc4=\\"\\" class=\\"actions-container\\">
+      <font-awesome-icon data-v-ee8f0cc4=\\"\\" class=\\"icon-action\\" icon=\\"fa-clone\\" rotation=\\"90\\" size=\\"lg\\"></font-awesome-icon>
+      <font-awesome-icon data-v-ee8f0cc4=\\"\\" class=\\"icon-action\\" icon=\\"fa-pen-to-square\\" size=\\"lg\\"></font-awesome-icon>
+      <font-awesome-icon data-v-ee8f0cc4=\\"\\" class=\\"icon-action delete\\" icon=\\"fa-trash-can\\" size=\\"lg\\"></font-awesome-icon>
+    </div>
+  </div>
+</div>"
+`;
