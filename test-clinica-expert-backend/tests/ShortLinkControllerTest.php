@@ -3,9 +3,14 @@
 namespace Tests;
 
 use App\Models\ShortLink;
+use App\Services\IpApiService;
+use App\ValueObjects\LogAccessAttrs;
+use Illuminate\Http\Client\Request;
+use Illuminate\Support\Facades\Route;
 use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 use Illuminate\Http\Response;
+use Mockery;
 
 class ShortLinkControllerTest extends TestCase
 {
@@ -21,6 +26,16 @@ class ShortLinkControllerTest extends TestCase
     {
         $shortLink = ShortLink::factory()->create(['identifier' => 'cde', 'hits' => 0]);
 
+        $ipApiService = Mockery::mock(IpApiService::class);
+        $ipApiService->shouldReceive('getIPdata')->andReturn(LogAccessAttrs::create(
+            country: 'Brazil',
+            continent: 'America',
+            region: 'Santa Catarina',
+            city: 'Chapeco'
+        ));
+
+        $this->app->instance(IpApiService::class, $ipApiService);
+
         $this->get("/cde");
 
         $this->assertResponseStatus(302);
@@ -28,8 +43,9 @@ class ShortLinkControllerTest extends TestCase
 
         $shortLink = ShortLink::firstWhere(['identifier' => 'cde']);
         $this->assertEquals(1, $shortLink->hits);
-
         $this->seeInDatabase('log_accesses', ['identifierUrl' => 'cde']);
+
+        Mockery::close();
     }
 
     public function testRequestToListAllShortLinks()

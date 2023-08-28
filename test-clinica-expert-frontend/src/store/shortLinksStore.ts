@@ -95,7 +95,8 @@ export const useShortLinkStore = defineStore('shortLinks', {
                 .then(res => {
                     return res.json()
                 })
-                .then(() => {
+                .then((res) => {
+                    console.log('res: ', res)
                     this.$state.shortLinks = this.$state.shortLinks.map((item: ShortLink) => {
                         if (item.identifier === id) {
                             return mountShortLink(item)

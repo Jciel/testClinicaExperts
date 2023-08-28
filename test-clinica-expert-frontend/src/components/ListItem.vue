@@ -55,6 +55,10 @@
   .text-link {
     display: flex;
     flex-direction: column;
+
+    .short-link {
+      cursor: pointer;
+    }
   }
 
   .info-actions-group {

@@ -15,6 +15,10 @@ class LogAccessService
 
     public function saveLogAccess(string $ip, string $userAgent, ShortLink $shortLink): LogAccess
     {
+        if ($ip === "127.0.0.1") {
+            $ip = "8.8.8.8"; // IP padrao*
+        }
+
         $logAccessAttrs = $this->ipApiService->getIPdata($ip);
 
         $logAccessAttrs->ip = $ip;
